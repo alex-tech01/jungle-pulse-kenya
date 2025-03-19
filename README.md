@@ -1,6 +1,6 @@
-# sv
+# Alex's first Webpage
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is my first project. Welcome to my Repository.
 
 ## Creating a project
 
