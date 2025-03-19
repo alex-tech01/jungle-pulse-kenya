@@ -1,10 +1,10 @@
 <script>
     let images = [
-        { src: "/lion.jpg", alt: "Lion in Maasai Mara" },
-        { src: "/elephant.jpg", alt: "Elephant in Amboseli" },
-        { src: "/zebra.jpg", alt: "Zebras in the savanna" },
-        { src: "/giraffe.jpg", alt: "Giraffe in Samburu National Reserve" },
-        { src: "/rhino.jpg", alt: "Rhino in Tsavo National Park" },
+        { src: "/lion-king.jpg", alt: "Lion in Maasai Mara" },
+        { src: "/elephant-family.jpg", alt: "Elephant in Amboseli" },
+        { src: "/zebras.jpg", alt: "Zebras in the savanna" },
+        { src: "/giraffe-family.jpg", alt: "Giraffe in Samburu National Reserve" },
+        { src: "/rhinos.jpg", alt: "Rhino in Tsavo National Park" },
     ];
 </script>
 
@@ -32,7 +32,9 @@
     }
     .gallery img {
         width: 300px;
-        height: auto;
+        height: 200px; /* fixed height */
+        object-fit: cover; /* prevent distortion */
+        object-position: center;
         border-radius: 10px;
         transition: transform 0.3s ease-in-out;
     }
