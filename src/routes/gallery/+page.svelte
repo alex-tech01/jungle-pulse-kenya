@@ -1,44 +1,50 @@
 <script>
-    let images = [
-        { src: "/lion-king.jpg", alt: "Lion in Maasai Mara" },
-        { src: "/elephant-family.jpg", alt: "Elephant in Amboseli" },
-        { src: "/zebras.jpg", alt: "Zebras in the savanna" },
-        { src: "/giraffe-family.jpg", alt: "Giraffe in Samburu National Reserve" },
-        { src: "/rhinos.jpg", alt: "Rhino in Tsavo National Park" },
-    ];
+    let tagline = "Experience the Wild Beauty of Kenya";
 </script>
 
-<main>
-    <h1>Wildlife Photo Gallery 📸</h1>
-    <p>Explore the stunning wildlife found in Kenya’s national parks.</p>
-
-    <div class="gallery">
-        {#each images as img}
-            <img src={img.src} alt={img.alt} />
-        {/each}
+<div class="hero">
+    <div class="overlay">
+        <h1>Jungle Pulse Kenya</h1>
+        <p>{tagline}</p>
+        <a href="/destinations" class="cta-button">Explore Destinations</a>
     </div>
-</main>
+</div>
 
 <style>
-    main {
-        text-align: center;
-        padding: 20px;
-    }
-    .gallery {
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 90vh;
+        background: url("/wildlife-hero.jpg") no-repeat center center/cover;
         display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
+        align-items: center;
         justify-content: center;
+        text-align: center;
+        color: white;
     }
-    .gallery img {
-        width: 300px;
-        height: 200px; /* fixed height */
-        object-fit: cover; /* prevent distortion */
-        object-position: center;
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
         border-radius: 10px;
-        transition: transform 0.3s ease-in-out;
     }
-    .gallery img:hover {
-        transform: scale(1.1);
+
+    h1 {
+        font-size: 3rem;
+        margin: 10px 0;
+    }
+
+    .cta-button {
+        background-color: #ff9800;
+        padding: 12px 24px;
+        border-radius: 5px;
+        color: white;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .cta-button:hover {
+        background-color: #e68900;
     }
 </style>

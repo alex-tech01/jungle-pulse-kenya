@@ -1,24 +1,22 @@
-<nav>
-    <a href="/">Home</a>
-    <a href="/safari-guide">Safari Guide</a>
-    <a href="/gallery">Gallery</a>
-</nav>
+<script>
+    import Nav from "$lib/Nav.svelte";
+</script>
+
+<Nav />
 
 <slot />
 
 <style>
     nav {
-        background: #2c3e50;
+        background-color: #1f2937;
         padding: 10px;
-        text-align: center;
     }
-    nav a {
+    a {
         color: white;
         text-decoration: none;
-        margin: 0 15px;
-        font-weight: bold;
+        margin-right: 15px;
     }
-    nav a:hover {
+    a:hover {
         text-decoration: underline;
     }
 </style>

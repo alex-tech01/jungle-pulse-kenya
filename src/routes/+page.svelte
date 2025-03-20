@@ -1,37 +1,49 @@
 <script>
-    let title = "Welcome to Jungle Pulse Kenya 🦁🌿";
+    let tagline = "Experience the Wild Beauty of Kenya";
 </script>
 
-<main>
-    <h1>{title}</h1>
-    <p>
-        Discover Kenya’s breathtaking wildlife safaris, from the Great Migration
-        to the Big Five.
-    </p>
-
-    <section class="hero">
-        <img src="/safari.jpg" alt="Kenya Safari" />
-    </section>
-
-    <section class="highlights">
-        <h2>Top Safari Destinations</h2>
-        <ul>
-            <li>🦁 Maasai Mara</li>
-            <li>🐘 Amboseli National Park</li>
-            <li>🦓 Tsavo National Park</li>
-            <li>🦒 Samburu National Reserve</li>
-        </ul>
-    </section>
-</main>
+<div class="hero">
+    <div class="overlay">
+        <h1>Jungle Pulse Kenya</h1>
+        <p>{tagline}</p>
+        <a href="/destinations" class="cta-button">Explore Destinations</a>
+    </div>
+</div>
 
 <style>
-    main {
-        text-align: center;
-        padding: 20px;
-    }
-    .hero img {
+    .hero {
         width: 100%;
-        max-width: 800px;
+        height: 90vh;
+        background: url("/wildlife-hero.jpg") no-repeat center center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
         border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin: 10px 0;
+    }
+
+    .cta-button {
+        background-color: #ff9800;
+        padding: 12px 24px;
+        border-radius: 5px;
+        color: white;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .cta-button:hover {
+        background-color: #e68900;
     }
 </style>
