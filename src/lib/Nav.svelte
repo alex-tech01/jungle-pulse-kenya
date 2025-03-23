@@ -1,17 +1,20 @@
 <script>
   import { onMount } from "svelte";
+
   let isMenuOpen = false;
 
-  // Close menu when clicking outside (on mobile)
-  function toggleMenu() {
+  const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
-  }
+  };
+
+  const closeMenu = () => {
+    isMenuOpen = false;
+  };
 
   onMount(() => {
-    // Close menu when clicking outside (on mobile)
-    document.addEventListener("click", (event) => {
-      if (isMenuOpen && !event.target.closest(".navbar")) {
-        isMenuOpen = false;
+    document.addEventListener("click", (e) => {
+      if (isMenuOpen && !e.target.closest(".navbar")) {
+        closeMenu();
       }
     });
   });
@@ -22,16 +25,17 @@
     <a href="/">Jungle Pulse Kenya</a>
   </div>
 
-  <ul class="nav-links {isMenuOpen ? 'open' : ''}">
-    <li><a href="/" class="nav-link">Home</a></li>
-    <li><a href="/destinations" class="nav-link">Destinations</a></li>
-    <li><a href="/wildlife" class="nav-link">Wildlife</a></li>
-    <li><a href="/blog" class="nav-link">Blog</a></li>
-    <li><a href="/contact" class="nav-link">Contact</a></li>
-  </ul>
+  <!-- Hamburger Icon -->
+  <div class="menu-toggle" on:click={toggleMenu}>&#9776;</div>
 
-  <!-- Mobile Menu Toggle -->
-  <div class="menu-toggle" on:click={toggleMenu}>☰</div>
+  <!-- Nav Links -->
+  <ul class:open={isMenuOpen} class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/destinations">Destinations</a></li>
+    <li><a href="/wildlife">Wildlife</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
 </nav>
 
 <style>
@@ -43,35 +47,71 @@
     padding: 15px 30px;
     color: white;
     position: fixed;
-    width: 100vw; /* Ensures full width */
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
   }
 
   .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
-    margin: 0; /* Fixes spacing issue */
-    padding: 0;
+    gap: 25px;
   }
 
-  .nav-links li {
-    display: inline;
-  }
-
-  .nav-link {
+  .nav-links li a {
     color: white;
     text-decoration: none;
+    font-weight: 500;
     padding: 8px 12px;
     border-radius: 5px;
     transition: 0.3s;
   }
 
-  .nav-link:hover {
+  .nav-links li a:hover {
     background: #ff9800;
     color: black;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  /* Mobile/Tablet view */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 30px;
+      background: rgba(0, 0, 0, 0.95);
+      flex-direction: column;
+      padding: 20px;
+      border-radius: 8px;
+      width: 200px;
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-links li {
+      margin: 10px 0;
+      text-align: right;
+    }
   }
 </style>
