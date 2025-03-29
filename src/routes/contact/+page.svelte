@@ -44,9 +44,15 @@
             <p>Location: Nairobi, Kenya</p>
 
             <div class="social-links">
-                <a href="#">🐦 Twitter</a>
-                <a href="#">📸 Instagram</a>
-                <a href="#">📘 Facebook</a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener"
+                    >🐦 Twitter</a
+                >
+                <a href="https://instagram.com/" target="_blank" rel="noopener"
+                    >📸 Instagram</a
+                >
+                <a href="https://facebook.com/" target="_blank" rel="noopener"
+                    >📘 Facebook</a
+                >
             </div>
         </div>
     </div>

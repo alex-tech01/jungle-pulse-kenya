@@ -1,4 +1,5 @@
 <script>
+    import "../app.css"; // 👈 This connects your global CSS
     import Nav from "$lib/Nav.svelte";
 </script>
 

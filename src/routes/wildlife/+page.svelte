@@ -1,5 +1,7 @@
 <script>
-    const animals = [
+    import { fade } from "svelte/transition";
+
+    const wildlife = [
         {
             name: "African Elephant",
             image: "/elephant.jpg",
@@ -8,7 +10,7 @@
         },
         {
             name: "Lion",
-            image: "/lion.jpg", // ✅ Make sure lion.jpg is in the static folder
+            image: "/lion.jpg",
             description:
                 "The king of the jungle, often spotted in Maasai Mara and Nairobi National Park.",
         },
@@ -16,17 +18,16 @@
             name: "Giraffe",
             image: "/giraffe.jpg",
             description:
-                "The world's tallest animal, gracefully roaming across Kenya’s savannahs.",
+                "The world’s tallest animal, gracefully roaming across Kenya’s savannahs.",
         },
     ];
 </script>
 
 <section class="wildlife-section">
-    <h1 class="title">Explore Kenya’s Iconic Wildlife</h1>
-
+    <h1>Explore Kenya’s Iconic Wildlife</h1>
     <div class="cards-container">
-        {#each animals as animal}
-            <div class="card">
+        {#each wildlife as animal, i (animal.name)}
+            <div class="card" in:fade={{ duration: 400, delay: i * 150 }}>
                 <img src={animal.image} alt={animal.name} />
                 <h2>{animal.name}</h2>
                 <p>{animal.description}</p>
@@ -37,36 +38,39 @@
 
 <style>
     .wildlife-section {
-        padding: 100px 40px 60px;
-        max-width: 1200px;
-        margin: 0 auto;
+        padding: 80px 30px;
+        text-align: center;
     }
 
-    .title {
-        text-align: center;
+    .wildlife-section h1 {
         font-size: 2.8rem;
-        font-weight: bold;
-        margin-bottom: 40px;
-        color: #222;
+        margin-bottom: 50px;
+        color: #1c1c1c;
     }
 
     .cards-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
+        justify-items: center;
     }
 
     .card {
         background: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
         overflow: hidden;
-        text-align: center;
-        transition: transform 0.2s;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        cursor: pointer;
+        max-width: 100%;
+        width: 100%;
     }
 
     .card:hover {
-        transform: scale(1.02);
+        transform: scale(1.04) translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     }
 
     .card img {
@@ -77,22 +81,13 @@
 
     .card h2 {
         font-size: 1.5rem;
-        margin: 15px 0 10px;
-        color: #000;
+        margin: 20px 0 10px;
+        color: #222;
     }
 
     .card p {
-        padding: 0 15px 20px;
-        color: #444;
-    }
-
-    @media (max-width: 768px) {
-        .title {
-            font-size: 2rem;
-        }
-
-        .card img {
-            height: 160px;
-        }
+        padding: 0 20px 20px;
+        font-size: 1rem;
+        color: #555;
     }
 </style>

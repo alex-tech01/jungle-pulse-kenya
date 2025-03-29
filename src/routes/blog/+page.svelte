@@ -24,6 +24,10 @@
     ];
 </script>
 
+<a href="/blog/photographing-wildlife">Read Full Post</a>
+
+<a href="/blog/photographing-wildlife">Read Full Post</a>
+
 <section class="blog">
     <h1 class="title">Latest Stories from the Wild</h1>
     <p class="subtitle">

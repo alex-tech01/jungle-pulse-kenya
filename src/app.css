@@ -1,0 +1,27 @@
+/* Global styles for Jungle Pulse Kenya */
+
+body {
+    font-family: system-ui, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f4d1a;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}

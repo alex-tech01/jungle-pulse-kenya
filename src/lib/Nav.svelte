@@ -1,117 +1,118 @@
 <script>
-  import { onMount } from "svelte";
+  let menuOpen = false;
 
-  let isMenuOpen = false;
-
-  const toggleMenu = () => {
-    isMenuOpen = !isMenuOpen;
-  };
-
-  const closeMenu = () => {
-    isMenuOpen = false;
-  };
-
-  onMount(() => {
-    document.addEventListener("click", (e) => {
-      if (isMenuOpen && !e.target.closest(".navbar")) {
-        closeMenu();
-      }
-    });
-  });
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+  }
 </script>
 
-<nav class="navbar">
-  <div class="logo">
-    <a href="/">Jungle Pulse Kenya</a>
+<nav class="nav">
+  <a href="/" class="logo">Jungle Pulse Kenya</a>
+
+  <button
+    on:click={toggleMenu}
+    aria-label="Toggle menu"
+    aria-expanded={menuOpen}
+    class="menu-toggle"
+  >
+    ☰
+  </button>
+
+  <div class={`nav-links ${menuOpen ? "open" : ""}`}>
+    <a href="/destinations">Destinations</a>
+    <a href="/wildlife">Wildlife</a>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact</a>
   </div>
-
-  <!-- Hamburger Icon -->
-  <div class="menu-toggle" on:click={toggleMenu}>&#9776;</div>
-
-  <!-- Nav Links -->
-  <ul class:open={isMenuOpen} class="nav-links">
-    <li><a href="/">Home</a></li>
-    <li><a href="/destinations">Destinations</a></li>
-    <li><a href="/wildlife">Wildlife</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="/contact">Contact</a></li>
-  </ul>
 </nav>
 
 <style>
-  .navbar {
+  .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #222;
-    padding: 15px 30px;
+    background-color: #0f4d1a;
+    padding: 1rem 2rem;
     color: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
   }
 
-  .logo a {
-    color: white;
+  .logo {
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
-  }
-
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-  }
-
-  .nav-links li a {
     color: white;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.3s;
+    transition: color 0.3s ease;
   }
 
-  .nav-links li a:hover {
-    background: #ff9800;
-    color: black;
+  .logo:hover {
+    color: #ffd700; /* gold-ish on hover */
   }
 
   .menu-toggle {
     display: none;
+    background: none;
     font-size: 2rem;
-    cursor: pointer;
     color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
   }
 
-  /* Mobile/Tablet view */
+  .menu-toggle:hover {
+    transform: rotate(90deg);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    transition: all 0.4s ease;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #ffd700;
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .nav-links a:hover {
+    color: #ffd700;
+  }
+
   @media (max-width: 768px) {
     .menu-toggle {
       display: block;
     }
 
     .nav-links {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 30px;
-      background: rgba(0, 0, 0, 0.95);
       flex-direction: column;
-      padding: 20px;
-      border-radius: 8px;
-      width: 200px;
+      margin-top: 1rem;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
     }
 
     .nav-links.open {
-      display: flex;
-    }
-
-    .nav-links li {
-      margin: 10px 0;
-      text-align: right;
+      max-height: 500px;
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 </style>

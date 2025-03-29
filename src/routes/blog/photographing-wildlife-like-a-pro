@@ -1,0 +1,59 @@
+<script>
+    import { onMount } from 'svelte';
+</script>
+
+<div class="max-w-4xl mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold mb-4 text-green-800">Photographing Wildlife Like a Pro</h1>
+    <p class="text-gray-600 mb-6">By Jungle Pulse Kenya · March 29, 2025</p>
+
+    <img src="/images/wildlife-photography.jpg" alt="Photographing Wildlife" class="rounded-2xl shadow-lg mb-8 w-full">
+
+    <div class="prose prose-lg max-w-none">
+        <p>
+            Capturing wildlife in its natural habitat requires patience, skill, and the right equipment. In this blog
+            post, we'll share practical tips to help you photograph wildlife like a professional—even if you're just
+            starting out!
+        </p>
+
+        <h2>1. Know Your Subject</h2>
+        <p>
+            Study the behavior of the animals you want to photograph. The more you understand their movements and
+            patterns, the better your chances of capturing the perfect shot.
+        </p>
+
+        <h2>2. Invest in the Right Gear</h2>
+        <p>
+            A DSLR or mirrorless camera with a good zoom lens is ideal. Tripods and monopods help stabilize your shot,
+            especially when using longer lenses.
+        </p>
+
+        <h2>3. Lighting is Everything</h2>
+        <p>
+            Early morning and late afternoon provide the best natural lighting. Avoid harsh midday sun if you can.
+        </p>
+
+        <h2>4. Practice Patience</h2>
+        <p>
+            Wildlife photography is about waiting. Sit quietly, blend into the surroundings, and let nature come to you.
+        </p>
+
+        <h2>5. Respect Nature</h2>
+        <p>
+            Never disturb animals for the sake of a photo. Ethical photography means preserving the safety and serenity
+            of wildlife.
+        </p>
+
+        <h2>Bonus Tip: Go Local</h2>
+        <p>
+            Kenya has an incredible variety of wildlife right in your backyard. Visit local reserves or join guided
+            safaris for amazing opportunities.
+        </p>
+
+        <hr>
+
+        <p>
+            Got a favorite wildlife shot? Tag us on Instagram with <strong>#JunglePulseKenya</strong> and you might get
+            featured!
+        </p>
+    </div>
+</div>
