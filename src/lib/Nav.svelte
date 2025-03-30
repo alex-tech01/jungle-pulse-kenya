@@ -114,5 +114,11 @@
       opacity: 1;
       pointer-events: auto;
     }
+    nav {
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
   }
 </style>

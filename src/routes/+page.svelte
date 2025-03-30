@@ -1,76 +1,64 @@
 <script>
-    // No need for any script for now
+    // We're not letting this lion win
 </script>
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="overlay">
-        <h1>Jungle Pulse Kenya</h1>
-        <p>Experience the Wild Beauty of Kenya</p>
-        <a href="/destinations" class="cta-button">Explore Destinations</a>
-    </div>
-</section>
+<main>
+    <img src="/images/home-hero.jpg" alt="Jungle Pulse Kenya" class="hero-bg" />
 
-<!-- Styles -->
+    <div class="hero-content">
+        <h1 style="font-size: 2.5rem; font-weight: bold;">
+            Jungle Pulse Kenya
+        </h1>
+        <p style="font-size: 1.25rem; margin-top: 0.5rem;">
+            Experience the Wild Beauty of Kenya
+        </p>
+        <a href="/destinations" class="hero-button">Explore Destinations</a>
+    </div>
+</main>
+
 <style>
-    .hero {
-        position: relative;
-        width: 100vw;
-        height: calc(100vh - 60px); /* adjusts for navbar height */
-        background: url("/wildlife-hero.jpg") no-repeat center center/cover;
+
+    main {
+        min-height: 100vh;
         display: flex;
-        align-items: center;
         justify-content: center;
-        padding: 0;
-        margin: 0;
+        align-items: center;
+        position: relative;
         overflow: hidden;
     }
 
-    .overlay {
-        background-color: rgba(0, 0, 0, 0.6); /* dark overlay for contrast */
-        padding: 30px 40px;
-        border-radius: 10px;
-        text-align: center;
-        color: #fff;
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
     }
 
-    h1 {
-        font-size: 3rem;
-        margin-bottom: 10px;
-        color: #ffd700; /* Gold for standout title */
-    }
-
-    p {
-        font-size: 1.3rem;
-        margin-bottom: 20px;
-        color: #ffffff;
-    }
-
-    .cta-button {
-        background-color: #ffa500; /* Bright safari orange */
+    .hero-content {
+        position: relative;
+        z-index: 2;
         color: white;
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        font-weight: bold;
+        text-align: center;
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 1rem;
+        max-width: 90%;
+    }
+
+    .hero-button {
+        margin-top: 1.5rem;
+        background-color: #facc15;
+        color: black;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
         text-decoration: none;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        transition:
-            background 0.3s ease,
-            transform 0.2s ease;
+        font-weight: bold;
         display: inline-block;
     }
 
-    .cta-button:hover {
-        background-color: #e67600;
-        transform: scale(1.05);
-        color: white;
-    }
-
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
+    .hero-button:hover {
+        background-color: #fbbf24;
     }
 </style>
