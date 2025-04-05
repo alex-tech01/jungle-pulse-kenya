@@ -1,64 +1,70 @@
 <script>
-    // We're not letting this lion win
+    // No logic yet
 </script>
 
-<main>
-    <img src="/images/home-hero.jpg" alt="Jungle Pulse Kenya" class="hero-bg" />
-
-    <div class="hero-content">
-        <h1 style="font-size: 2.5rem; font-weight: bold;">
+<!-- HERO SECTION -->
+<section class="hero">
+    <div
+        class="bg-black bg-opacity-[0.7] p-8 rounded-lg text-center max-w-2xl w-full mx-4 shadow-xl"
+    >
+        <h1
+            class="text-white text-5xl md:text-6xl font-extrabold drop-shadow-md mb-4"
+        >
             Jungle Pulse Kenya
         </h1>
-        <p style="font-size: 1.25rem; margin-top: 0.5rem;">
+        <p class="text-gray-100 text-lg md:text-2xl italic mb-6">
             Experience the Wild Beauty of Kenya
         </p>
-        <a href="/destinations" class="hero-button">Explore Destinations</a>
+        <a
+            href="/destinations"
+            class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-full transition duration-300 shadow-md"
+        >
+            Explore Destinations
+        </a>
     </div>
-</main>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white text-gray-800 py-6 px-4 border-t border-gray-200">
+    <div class="max-w-4xl mx-auto text-center">
+        <p class="text-sm italic font-bold text-gray-700 mb-2">
+            "Jungle Pulse Kenya is your gateway to the heart of Africa. Discover
+            wild beauty, untamed landscapes, and unforgettable journeys."
+        </p>
+        <p class="text-xs italic font-bold text-gray-600">
+            © 2025 Jungle Pulse Kenya. All Rights Reserved.
+        </p>
+    </div>
+</footer>
 
 <style>
-
-    main {
-        min-height: 100vh;
+    .hero {
+        height: 90vh;
+        background-image: url("/majestic-lion.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         display: flex;
-        justify-content: center;
         align-items: center;
-        position: relative;
-        overflow: hidden;
+        justify-content: center;
     }
 
-    .hero-bg {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
-    }
+    @media (max-width: 768px) {
+        .hero {
+            height: 60vh;
+        }
 
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        color: white;
-        text-align: center;
-        padding: 2rem;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 1rem;
-        max-width: 90%;
-    }
+        .hero h1 {
+            font-size: 2rem;
+        }
 
-    .hero-button {
-        margin-top: 1.5rem;
-        background-color: #facc15;
-        color: black;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
-    }
+        .hero p {
+            font-size: 1rem;
+        }
 
-    .hero-button:hover {
-        background-color: #fbbf24;
+        .hero a {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+        }
     }
 </style>
